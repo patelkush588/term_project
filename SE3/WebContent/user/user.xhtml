@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>User's Dashboard</title>
+</head>
+<h:body>
+<!--  	<b:jumbotron> -->
+<!--        	<b:row> -->
+<!--        	<b:column> -->
+      
+       	
+	       	<h3>Welcome <h:outputLabel value="#{username}" style="color:blue"></h:outputLabel></h3>
+	        <h3>You are registered as a <h:outputLabel value="#{type}" style="color:blue"></h:outputLabel></h3>
+<!--         </b:column> -->
+<!--         <b:column> -->
+	       	<h4><h:outputText value="Successfully registered with us. These are your details:"/></h4>
+<!--            	<h:form> -->
+<!-- 			    <b:dataTable value="#{login_bean}"> -->
+<!-- 			        <b:dataTableColumn value="#{login_bean.emailid}" /> -->
+<!-- 			        <b:dataTableColumn value="#{login_bean.password}" /> -->
+<!-- 			        <b:dataTableColumn value="#{login_bean.address}" /> -->
+<!-- 			        <b:dataTableColumn value="#{login_bean.phonenumber}" /> -->
+<!-- 			    </b:dataTable> -->
+<!-- 			</h:form> -->
+			<table>
+				<tr>  
+	<td><b>Email: </b></td>  
+	<td><h:outputText value="#{login_bean.emailid}"/><br/></td>  
+	</tr>
+	<tr>  
+	<td><b>Password:</b></td>  
+	<td><h:outputText value="#{login_bean.password}"/><br/></td>  
+	</tr> 
+	<tr>  
+	<td><b>Address:</b></td>  
+	<td><h:outputText value="#{login_bean.address}"/><br/></td>  
+	</tr> 
+			</table>
+          	<h:form><br></br><h:commandButton action="#{login_bean.logOut}" value="Logout"/></h:form><br></br>
+          	<h1><a href="viewuserprofile.xhtml">View Profile</a></h1>
+          	<h1><a href="userhome.xhtml">Stock Activity</a></h1>
+        <h1><a href="viewmanager.xhtml">View Managers</a></h1>
+        
+<!--           </b:column> -->
+<!--           </b:row> -->
+<!--         </b:jumbotron> -->
+	  
+	 </h:body>
+ </html>

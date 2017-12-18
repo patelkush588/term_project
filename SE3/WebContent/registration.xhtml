@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:outputStylesheet library="css" name="style.css" />
+<h:outputStylesheet library="css" name="bootstrap.min.css" />
+<h:head>
+	<title>Registration Page</title>
+	<style>
+.abc {
+	margin: 100px 100px 100px 100px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	background-color: #a9c6da;
+	height: 100%;
+}
+</style>
+	
+</h:head>
+<h:body>
+	<h:form id="registerForm" class="abc">
+	
+		<table>
+			<tr><h:outputText value="#{login_bean.msg}"/></tr>
+			<tr>
+				<td><h:outputText value="Enter Your First Name:" /></td>
+				<td><h:inputText id="fn" value="#{login_bean.firstName}"
+						required="true" requiredMessage="please enter your first name" /></td>
+				<td><h:message for="fn" style="color:red" /></td>
+			</tr>
+
+			<tr>
+				<td><h:outputText value="Enter Your Last Name:" /></td>
+				<td><h:inputText id="ln" value="#{login_bean.lastname}"
+						required="true" requiredMessage="please enter your last name" /></td>
+				<td><h:message for="ln" style="color:red" /></td>
+			</tr>
+
+			<tr>
+				<td><h:outputText value="Enter Your Address:" /></td>
+				<td><h:inputText id="add" value="#{login_bean.address}"
+						required="true" requiredMessage="please enter your address"></h:inputText></td>
+				<td><h:message for="add" style="color:red" /></td>
+			</tr>
+			<tr>
+				<td><h:outputText value="Enter Your Phone Number:" /></td>
+				<td><h:inputText id="pn" value="#{login_bean.phonenumber}"
+						required="true" requiredMessage="please enter your Phone Number" /></td>
+				<td><h:message for="pn" style="color:red" /></td>
+			</tr>
+			<tr>
+				<td><h:outputText value="Enter Your email ID:" /></td>
+				<td><h:inputText id="email" value="#{login_bean.emailid}"
+						required="true" requiredMessage="Please enter your email id" /></td>
+				<td><h:message for="email" style="color:red" /></td>
+			</tr>
+			<tr>
+				<td><h:outputText value="Enter Your Username:" /></td>
+				<td><h:inputText id="un" required="true"
+						value="#{login_bean.username}"
+						requiredMessage="please enter your username" /></td>
+				<td><h:message for="un" style="color:red" /></td>
+			</tr>
+			<tr>
+				<td><h:outputText value="Enter Password :" /></td>
+				<td><h:inputSecret id="psw" value="#{login_bean.password}"
+						required="true" requiredMessage="Please enter your password" /></td>
+				<td><h:message for="psw" style="color:red" /></td>
+			</tr>
+			<tr>
+				<td><h:outputText value="User Type" /></td>
+				<td><h:selectOneRadio value="#{login_bean.type}" 
+					required="true" requiredMessage="Please select a user type">
+					   	<f:selectItem itemValue="user" itemLabel="User" />
+					   	<f:selectItem itemValue="manager" itemLabel="Manager" />
+					</h:selectOneRadio></td>
+			</tr>
+			<tr>
+				<td><h:commandButton value="Register"
+						action="#{login_bean.register}" /></td>
+			</tr>
+		</table>
+	</h:form>
+</h:body>
+</html>

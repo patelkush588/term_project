@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge; charset=ISO-8859-1" />
+<h:outputStylesheet library="css" name="bootstrap.min.css"></h:outputStylesheet>
+<title>User's Dashboard</title>
+</h:head>
+
+    <h:body>
+        <div class="container">
+        <div class="panel panel-success">
+        <div class="panel-heading">
+        	<h3>Approve or Reject Manager account request</h3>
+        	<h:outputText value="#{messageQ}"></h:outputText>
+        </div>
+        <div class="panel-body">
+        <h4>Pending Managers List</h4>
+
+        <h:dataTable value="#{getData.getManagerList()}" var="manager" class="table table-striped">
+           <h:column>
+               <f:facet name="header">
+                   <h:outputText value="First Name"/>
+               </f:facet>
+                   <h:outputText value="#{manager.first_name}"/>
+           </h:column>
+           <h:column>
+               <f:facet name="header">
+                   <h:outputText value="Last Name"/>
+               </f:facet>
+                   <h:outputText value="#{manager.last_name}"/>
+           </h:column>
+           <h:column>
+               <f:facet name="header">
+                   <h:outputText value="APPROVE / REJECT"/>
+               </f:facet>
+               <h:form>
+               <h:commandButton value="REJECT" action="#{getData.approveRejectManager(manager.id,0)}">
+               </h:commandButton>
+               </h:form>
+               <h:form>
+               <h:commandButton value="APPROVE" action="#{getData.approveRejectManager(manager.id,2)}">
+               </h:commandButton>
+               </h:form>
+           </h:column>
+         </h:dataTable>
+         </div>
+         </div>
+         </div>
+
+    </h:body>
+    
+</html>
